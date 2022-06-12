@@ -52,8 +52,8 @@ ENV APPSMITH_SEGMENT_CE_KEY=${APPSMITH_SEGMENT_CE_KEY}
 RUN mkdir -p ./backend ./editor ./rts ./backend/plugins ./templates ./utils
 
 #Add the jar to the container
-COPY ${JAR_FILE} backend/server.jar
-COPY ${PLUGIN_JARS} backend/plugins/
+COPY ./app/server/dist/server-*.jar backend/server.jar
+COPY ./app/server/dist/plugins/*.jar backend/plugins/
 
 # Add client UI - Application Layer
 COPY ./app/client/build editor/
